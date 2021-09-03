@@ -1,0 +1,19 @@
+Készéts egyközösségi oldalt React használatával.
+Az adatokat a következő tesztelésre szolgáló REST API-n érhetitek el axios használatával: https://jsonplaceholder.typicode.com/A
+végponthívásokál kezeljétek le asikertelen végponthívásokat is (elég egy console.log).
+A routok kialakításához használd a react-router-dom libraryt.
+Mielőtt elkezdesz kódolni gondold át, hogy milyen komponenseket fogsz létrehozni és ezek milyen kapcsolatban lesznek egymással,
+akár le israjzolhatod, hogy követni tudd a megvalósítás során.
+
+•Az oldal megnyitásakor a felhasználók által írt postok jelennek meg (GET /posts végpont).
+
+◦Jelenjenek meg a szerző user részletes adatai (GET /users vagy GET/users/1)
+◦A post címére kattintva a post részletes oldalára jutunk (routolás!),
+ahol megjelennek a bejegyzéshez írt kommentek is (GET /posts/1/comments)
+◦Helyezz el az oldalon egy textarea-t, amelybe a felhasználó megjegyzést írhat.
+A megjegyzést egy küldés gombbal lehessen elküldeni (POST /post/1/comment)
+
+•A bejegyzés szerzőjének nevére kattintva jelenjen meg a szerző albumainak listája (routing!) (GET /users/1/albums)
+•Az album címére kattintva jelenjenek meg az albumban szereplő képek (routing!) (/albums/2/photos).
+◦A kis képek jelenjenek meg (thumbnail)
+◦A thumbnailre kattintva jelenjen meg a teljes méretű kép
