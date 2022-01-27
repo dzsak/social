@@ -1,1 +1,8 @@
-{"app":"social","env":"staging","namespace":"staging","chart":{"repository":"https://chart.onechart.dev","name":"onechart","version":"0.32.0"},"values":{"image":{"repository":"nginxdddd"}}}
+app: social
+env: staging
+namespace: staging
+chart:
+    repository: https://chart.onechart.dev
+    name: onechart
+    version: 0.32.0
+values: {}
