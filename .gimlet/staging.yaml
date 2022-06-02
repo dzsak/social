@@ -1,6 +1,6 @@
 app: social
 env: staging
-namespace: staging
+namespace: default
 chart:
   repository: charts/onechart
   name: gimlet-io/onechart
