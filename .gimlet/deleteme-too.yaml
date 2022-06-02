@@ -8,6 +8,7 @@ chart:
 values:
   gitRepository: dzsak/social
   gitSha: '{{ .CIRCLE_SHA1 }}'
+  replicas: 3
 strategicMergePatches: ""
 json6902Patches: []
 manifests: ""
