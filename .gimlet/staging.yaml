@@ -1,0 +1,14 @@
+app: social
+env: staging
+namespace: default
+chart:
+  repository: https://chart.onechart.dev
+  name: onechart
+  version: 0.37.0
+values:
+  gitRepository: dzsak/social
+  gitSha: '{{ .CIRCLE_SHA1 }}'
+  replicas: 2
+strategicMergePatches: ""
+json6902Patches: []
+manifests: ""
