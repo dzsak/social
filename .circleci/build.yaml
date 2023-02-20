@@ -1,1 +1,25 @@
+version: 2.1
 
+orbs:
+  gimlet: gimlet-io/circleci-orb@dev:1934d4b
+
+workflows:
+  branch-build:
+    jobs:
+      - build_docker_image:
+          context: 
+            - GithubCR
+            - Gimlet
+
+jobs:
+  build_docker_image:
+    machine: true
+    working_directory: /tmp/workspace
+    steps:
+      - checkout
+      - run: |
+          docker login ghcr.io -u gimlet-io -p $GITHUB_PAT
+          docker build -t ghcr.io/gimlet-io/gimletd-demo:$CIRCLE_SHA1 .
+          docker push ghcr.io/gimlet-io/gimletd-demo:$CIRCLE_SHA1
+      - gimlet/gimlet-artifact-create:
+          image-tag: "ghcr.io/gimlet-io/gimletd-demo:$CIRCLE_SHA1"
