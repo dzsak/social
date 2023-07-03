@@ -1,7 +1,13 @@
-app: hello
-manifests: |
-  ---
-  hello: yo
+app: print
+env: staging
+namespace: default
+chart:
+  repository: https://chart.onechart.dev
+  name: onechart
+  version: 0.47.0
+values:
+  gitRepository: dzsak/social
+  gitSha: '{{ .SHA }}'
 dependencies:
 - name: my-redis
   kind: terraform
