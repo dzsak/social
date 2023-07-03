@@ -8,3 +8,14 @@ chart:
 values:
   gitRepository: dzsak/social
   gitSha: '{{ .SHA }}'
+dependencies:
+- name: my-redis
+  kind: terraform
+  spec:
+    module:
+      url: https://github.com/gimlet-io/tfmodules?sha=xyz&path=azure/postgresql-flexible-server-database
+      secret: gitDeployKey
+    values:
+      database: my-app
+      user: my-app
+    secret: db-admin-secret
