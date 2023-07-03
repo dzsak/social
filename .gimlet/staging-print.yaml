@@ -1,19 +1,13 @@
-app: print
-env: staging
-namespace: default
-chart:
-  repository: https://chart.onechart.dev
-  name: onechart
-  version: 0.47.0
-values:
-  gitRepository: dzsak/social
-  gitSha: '{{ .SHA }}'
+app: hello
+manifests: |
+  ---
+  hello: yo
 dependencies:
 - name: my-redis
   kind: terraform
   spec:
     module:
-      url: https://github.com/gimlet-io/tfmodules?sha=xyz&path=azure/postgresql-flexible-server-database
+      url: https://github.com/gimlet-io/tfmodules?branch=main&path=azure/postgresql-flexible-server-database
       secret: gitDeployKey
     values:
       database: my-app
