@@ -7,7 +7,7 @@ variable "database-dummy" {
 variable "is-admin-dummy" {
   type = bool
   description = "Testing is-admin bool variable"
-  default = false
+  default = true
 }
 
 variable "server_id" {
