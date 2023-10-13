@@ -2,7 +2,7 @@ app: print
 chart:
   name: onechart
   repository: https://chart.onechart.dev
-  version: 0.47.0
+  version: 0.57.0
 dependencies:
 - kind: terraform
   name: my-redis
